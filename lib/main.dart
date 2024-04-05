@@ -1,11 +1,15 @@
 
 import 'package:flutter/material.dart';
 
+<<<<<<< HEAD
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     //options: DefaultFirebaseOptions.currentPlatform,
   );
+=======
+void main() {
+>>>>>>> parent of 7b79788 (n)
   runApp(const MainApp());
 }
 
