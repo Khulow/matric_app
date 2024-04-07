@@ -8,9 +8,18 @@ void main() async {
     //options: DefaultFirebaseOptions.currentPlatform,
   );
 =======
+<<<<<<< Updated upstream
 void main() {
 >>>>>>> parent of 7b79788 (n)
   runApp(const MainApp());
+=======
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    //options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(const MainApp()); 
+>>>>>>> Stashed changes
 }
 
 class MainApp extends StatelessWidget {
