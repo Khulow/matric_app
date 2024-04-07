@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "219638235137",
+    "firebase_url": "https://matricapp-6b138-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "matricapp-6b138",
+    "storage_bucket": "matricapp-6b138.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219638235137:android:6103f3f774289da8e48000",
+        "android_client_info": {
+          "package_name": "com.example.matric_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaLQhKxTF4f1Vzdh083TTIcrTtKkXDY4w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
