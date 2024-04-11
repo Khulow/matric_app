@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -12,7 +10,10 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(title: Text(title));
+    return AppBar(
+      title: Text(title),
+      centerTitle: true,
+    );
   }
 
   @override

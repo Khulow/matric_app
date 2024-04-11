@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:matric_app/widgets/appbar.dart';
 import 'package:matric_app/widgets/auth_button.dart';
@@ -11,33 +10,40 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(title: 'Login'),
+      appBar: const MyAppBar(title: 'Login'
+      ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            CustomTextField(
-              controller: emailController,
-              labelText: 'Email',
-            ),
-            CustomTextField(
-              controller: passwordController,
-              labelText: 'Password',
-            ),
-            AuthButton(
-              text: 'Login',
-              onPressed: () async {
-                // Login logic
-              },
-            ),
-            TextButton(
-              onPressed: () {
-                // Navigate to registration screen
-              },
-              child: const Text('Create an account'),
-            ),
-          ],
+        padding: const EdgeInsets.all(16.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              CustomTextField(
+                controller: emailController,
+                labelText: 'Email',
+              ),
+              CustomTextField(
+                controller: passwordController,
+                labelText: 'Password',
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              AuthButton(
+                text: 'Login',
+                onPressed: () async {
+                  // Login logic
+                },
+              ),
+              TextButton(
+                onPressed: () {
+                  // Navigate to registration screen
+                },
+                child: const Text('Create an account'),
+              ),
+            ],
+          ),
         ),
       ),
     );
