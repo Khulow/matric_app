@@ -12,11 +12,27 @@ dependencies:
   firebase_core: ^2.28.0
   flutter:
     sdk: flutter
+  flutter_native_splash: ^2.4.0
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
 
+flutter_native_splash:
+  color : "#f7f6f1"
+  color_dark : "#272727"
+  image : assets/images/matric splash.png
+  image_dark: assets/images/matric splash.png
+
+  android_12 :
+  icon_background_color : "#f7f6f1"
+  icon_background_color_dark: "#272727"
+  
+
 flutter:
   uses-material-design: true
+  assets :
+    - assets/images/
+    - assets/images/welcome_image.png

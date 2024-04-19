@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:matric_app/widgets/appbar.dart';
-import 'package:matric_app/widgets/auth_button.dart';
-import 'package:matric_app/widgets/custom_textfield.dart';
+import 'package:matric_app/common_widgets/appbar.dart';
+import 'package:matric_app/common_widgets/auth_button.dart';
+import 'package:matric_app/common_widgets/custom_textfield.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen2 extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final VoidCallback showRegisterPage;
+  LoginScreen2({super.key, required this.showRegisterPage});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const MyAppBar(title: 'Login'
-      ),
+      appBar: const MyAppBar(title: 'Login'),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Center(
@@ -40,7 +41,10 @@ class LoginScreen extends StatelessWidget {
                 onPressed: () {
                   // Navigate to registration screen
                 },
-                child: const Text('Create an account'),
+                child: Text(
+                  'Create an account',
+                  style: Theme.of(context).textTheme.displaySmall,
+                ),
               ),
             ],
           ),
