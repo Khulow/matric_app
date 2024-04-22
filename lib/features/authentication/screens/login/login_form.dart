@@ -25,6 +25,7 @@ class LoginForm extends StatelessWidget {
           TextFormField(
             decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.fingerprint),
+                //must add obsecure text for password
                 labelText: tPassword,
                 hintText: tPassword,
                 border: OutlineInputBorder(),

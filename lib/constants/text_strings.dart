@@ -1,7 +1,7 @@
 // welcome Screen Text
-const String tWelcomeTitle = "Practice Question";
+const String tWelcomeTitle = "Matric Exam Reviser";
 const String tWelcomeSubTitle =
-    "let us help you archieve those marks, start your genuine with us";
+    "let us help you archieve those marks, start your journey with us";
 
 //Genric Text
 const String tLogin = "Login";
@@ -16,5 +16,11 @@ const String tSignInWithGoogle = "Sign-In with Google";
 const String tLoginTitle = "Welcome back,";
 const String tLoginSubTitle = "Practice Makes Perfect";
 const String tRememberMe = "Remember Me?";
+const String tDontHaveAccount = "Dont have an account";
+const String tSignInwithGoogle = "Sign In with Google";
+
+//SignUp Screen Text
+const String tSignupTitle = "Register,";
+const String tSignSubTitle = "Create your profile to start your journey with us...";
 const String tAlreadyHaveAnAccount = "Already have an account?";
-const String tDontHaveAccount = "";
+

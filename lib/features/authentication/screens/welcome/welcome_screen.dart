@@ -5,6 +5,7 @@ import 'package:matric_app/constants/image_strings.dart';
 import 'package:matric_app/constants/sizes.dart';
 import 'package:matric_app/constants/text_strings.dart';
 import 'package:matric_app/features/authentication/screens/login/login_screen.dart';
+import 'package:matric_app/features/authentication/screens/signup/signup_screen.dart';
 import 'package:matric_app/pages/login_page.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -66,7 +67,12 @@ class WelcomeScreen extends StatelessWidget {
                   Expanded(
                     child: ElevatedButton(
                       //add the sign up logic here
-                      onPressed: () {},
+                      onPressed: () {
+                         Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignUpScreen()));
+                      },
                       child: Text(
                         tSignUp.toUpperCase(),
                       ),

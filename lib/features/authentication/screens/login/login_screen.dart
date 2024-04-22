@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:matric_app/constants/image_strings.dart';
 import 'package:matric_app/constants/sizes.dart';
+import 'package:matric_app/constants/text_strings.dart';
+import 'package:matric_app/features/authentication/screens/login/login_footer.dart';
 import 'package:matric_app/features/authentication/screens/login/login_form.dart';
 import 'package:matric_app/features/authentication/screens/login/login_header.dart';
 
@@ -14,16 +17,15 @@ class LoginScreen extends StatelessWidget {
       child: Scaffold(
         body: Container(
           padding: const EdgeInsets.all(tDefaultSize),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              LoginHeader(size: size),
-              const LoginForm(),
-              const Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [],
-              )
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                LoginHeader(size: size),
+                const LoginForm(),
+                const LoginFooter()
+              ],
+            ),
           ),
         ),
       ),
