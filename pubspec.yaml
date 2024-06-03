@@ -13,7 +13,11 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_native_splash: ^2.4.0
+  flutter_svg: ^2.0.10+1
+  get: ^4.6.6
   google_fonts: ^6.2.1
+  provider: ^6.1.2
+  svg_flutter: ^0.0.1
 
 dev_dependencies:
   flutter_test:
@@ -36,3 +40,4 @@ flutter:
   assets :
     - assets/images/
     - assets/images/welcome_image.png
+    - assets/subjects/

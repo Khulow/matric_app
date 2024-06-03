@@ -21,6 +21,18 @@ const String tSignInwithGoogle = "Sign In with Google";
 
 //SignUp Screen Text
 const String tSignupTitle = "Register,";
-const String tSignSubTitle = "Create your profile to start your journey with us...";
+const String tFullName = "Full Name";
+const String tPhoneNo = "Phone No";
+//const String  = "Full Name";
+const String tSignSubTitle =
+    "Create your profile to start your journey with us...";
 const String tAlreadyHaveAnAccount = "Already have an account?";
 
+//DASHBARD SCREEN
+const String tDashboardTitle = "Hey, User";
+const String tDashboardHeading = "Explore Subjects";
+const String tDashboardSearch = "Search....";
+const String tDashboardBannerTitle1 = "MATRIC QUESTION";
+const String tDashboardBannerTitle2 = "10 LESSONS";
+const String tDashboardButton = "View all";
+const String tDashboardTopSubjects = "Top Subjects";
