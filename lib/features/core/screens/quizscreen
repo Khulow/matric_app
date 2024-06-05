@@ -1,0 +1,159 @@
+/* import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
+
+class QuizScreen2 extends StatefulWidget {
+  @override
+  _QuizScreen2State createState() => _QuizScreen2State();
+}
+
+class _QuizScreen2State extends State<QuizScreen2> {
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  Map<String, String> selectedAnswers = {};
+  bool isSubmitted = false;
+  int score = 0;
+
+  Future<Map<String, dynamic>> _fetchQuizData() async {
+    Map<String, dynamic> quizData = {};
+
+    try {
+      DocumentSnapshot paperSnapshot =
+          await _firestore.collection('questionsPapers').doc('ppr008').get();
+      print('Paper Snapshot: ${paperSnapshot.data()}');
+
+      if (paperSnapshot.exists && paperSnapshot.data() != null) {
+        quizData['paperTitle'] =
+            (paperSnapshot.data() as Map<String, dynamic>)['title'];
+      } else {
+        quizData['paperTitle'] = 'Unknown Paper Title';
+      }
+
+      quizData['questions'] = [];
+      QuerySnapshot questionsSnapshot = await _firestore
+          .collection('questionsPapers')
+          //fix ths line here, in such it collects
+          .doc('ppr008')
+          .collection('questions')
+          .get();
+      print(
+          'Questions Snapshot: ${questionsSnapshot.docs.length} documents found.');
+
+      for (var questionDoc in questionsSnapshot.docs) {
+        print('Processing question: ${questionDoc.data()}');
+        if (questionDoc.exists && questionDoc.data() != null) {
+          Map<String, dynamic> questionData =
+              questionDoc.data() as Map<String, dynamic>;
+          questionData['id'] = questionDoc.id; // Add the question document ID
+          QuerySnapshot answersSnapshot =
+              await questionDoc.reference.collection('answers').get();
+          print(
+              'Answers for question ${questionDoc.id}: ${answersSnapshot.docs.length} documents found.');
+          questionData['answers'] = answersSnapshot.docs
+              .where((doc) => doc.exists && doc.data() != null)
+              .map((doc) => doc.data() as Map<String, dynamic>)
+              .toList();
+          quizData['questions'].add(questionData);
+        }
+      }
+
+      print('Final Quiz Data: $quizData');
+      return quizData;
+    } catch (e) {
+      print('Error fetching quiz data: $e');
+      return {'paperTitle': 'Unknown Paper Title', 'questions': []};
+    }
+  }
+
+  void _selectAnswer(String questionId, String answerId) {
+    setState(() {
+      selectedAnswers[questionId] = answerId;
+    });
+  }
+
+  void _submitQuiz(Map<String, dynamic> quizData) {
+    int totalScore = 0;
+
+    quizData['questions'].forEach((question) {
+      String correctAnswer = question['correct_answer'];
+      String? selectedAnswer = selectedAnswers[
+          question['id']]; // Allow selectedAnswer to be nullable
+      if (selectedAnswer != null && correctAnswer == selectedAnswer) {
+        totalScore += 1;
+      }
+    });
+
+    setState(() {
+      isSubmitted = true;
+      score = totalScore;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Quiz'),
+      ),
+      body: FutureBuilder<Map<String, dynamic>>(
+        future: _fetchQuizData(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(child: CircularProgressIndicator());
+          }
+          if (snapshot.hasError) {
+            return Center(child: Text('Error: ${snapshot.error}'));
+          }
+
+          if (!snapshot.hasData || snapshot.data == null) {
+            return Center(child: Text('No data available.'));
+          }
+
+          var quizData = snapshot.data!;
+          print('Quiz Data for UI: $quizData'); // Debug print
+          return ListView(
+            children: [
+              Text('Paper: ${quizData['paperTitle']}'),
+              ...quizData['questions'].map<Widget>((question) {
+                return Card(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ListTile(
+                        title: Text(question['question'] ?? 'Unknown Question'),
+                      ),
+                      ...question['answers'].map<Widget>((answer) {
+                        return RadioListTile<String>(
+                          title:
+                              //fix the code here
+                              Text(answer['answer'] ?? 'Unknown Answer'),
+                          value: answer['identifier'],
+                          groupValue: selectedAnswers[question['id']],
+                          onChanged: isSubmitted
+                              ? null
+                              : (value) {
+                                  _selectAnswer(question['id'], value!);
+                                },
+                        );
+                      }).toList(),
+                    ],
+                  ),
+                );
+              }).toList(),
+              if (!isSubmitted)
+                ElevatedButton(
+                  onPressed: () => _submitQuiz(quizData),
+                  child: Text('Submit'),
+                ),
+              if (isSubmitted)
+                Center(
+                  child: Text(
+                      'Your score: $score / ${quizData['questions'].length}'),
+                ),
+            ],
+          );
+        },
+      ),
+    );
+  }
+}
+ */

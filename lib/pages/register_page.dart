@@ -1,18 +1,19 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:matric_app/widgets/appbar.dart';
-import 'package:matric_app/widgets/auth_button.dart';
-import 'package:matric_app/widgets/custom_textfield.dart';
+import 'package:matric_app/common_widgets/appbar.dart';
+import 'package:matric_app/common_widgets/auth_button.dart';
+import 'package:matric_app/common_widgets/custom_textfield.dart';
 
 class RegistrationScreen extends StatelessWidget {
-  
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController displayNameController =
-      TextEditingController();
+  final TextEditingController displayNameController = TextEditingController();
 
-  RegistrationScreen({super.key}); // Added for display name
+  final VoidCallback showloginPage;
+
+  RegistrationScreen(
+      {super.key, required this.showloginPage}); // Added for display name
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +48,10 @@ class RegistrationScreen extends StatelessWidget {
                     email: emailController.text,
                     password: passwordController.text,
                   );
+
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      content: Text('User registered successfully!'),
+                      duration: Duration(seconds: 2)));
 
                   String userId = userCredential.user!.uid;
 
