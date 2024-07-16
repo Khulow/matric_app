@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:matric_app/constants/colors.dart';
-import 'package:matric_app/constants/image_strings.dart';
-import 'package:matric_app/constants/sizes.dart';
-import 'package:matric_app/constants/text_strings.dart';
-import 'package:matric_app/features/authentication/screens/login/login_screen.dart';
-import 'package:matric_app/features/authentication/screens/signup/signup_screen.dart';
-import 'package:matric_app/pages/login_page.dart';
+import 'package:matric_app/miscellaneous/constants/colors.dart';
+import 'package:matric_app/miscellaneous/constants/image_strings.dart';
+import 'package:matric_app/miscellaneous/constants/sizes.dart';
+import 'package:matric_app/miscellaneous/constants/text_strings.dart';
+import 'package:matric_app/pages/login.dart';
+import 'package:matric_app/pages/register.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -50,34 +48,18 @@ class WelcomeScreen extends StatelessWidget {
                       //add the login logic here
                       onPressed: () {
                         // Navigate to the second screen
-                        Navigator.push(
+                        Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const LoginScreen(
-                                      
-                                    )));
+                                builder: (context) =>
+                                    const Login()));
                       },
 
                       child: Text(
-                        tLogin.toUpperCase(),
+                        tGetStarted.toUpperCase(),
                       ),
                     ),
                   ),
-                  const SizedBox(width: 10.0),
-                  Expanded(
-                    child: ElevatedButton(
-                      //add the sign up logic here
-                      onPressed: () {
-                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const SignUpScreen()));
-                      },
-                      child: Text(
-                        tSignUp.toUpperCase(),
-                      ),
-                    ),
-                  )
                 ],
               )
             ],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:matric_app/constants/colors.dart';
+import 'package:matric_app/miscellaneous/constants/colors.dart';
 
 class SubjectsModel {
   String name;

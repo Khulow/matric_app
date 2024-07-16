@@ -7,17 +7,22 @@ environment:
   sdk: '>=3.3.1 <4.0.0'
 
 dependencies:
+  awesome_snackbar_content: ^0.1.3
   cloud_firestore: ^4.16.1
+  fancy_bottom_navigation: ^0.3.3
   firebase_auth: ^4.19.1
   firebase_core: ^2.28.0
   flutter:
     sdk: flutter
+  flutter_animate: ^4.5.0
   flutter_native_splash: ^2.4.0
   flutter_svg: ^2.0.10+1
-  get: ^4.6.6
+  
   google_fonts: ^6.2.1
+  lottie: ^3.1.2
   provider: ^6.1.2
   svg_flutter: ^0.0.1
+  tuple: ^2.0.2
 
 dev_dependencies:
   flutter_test:
@@ -27,8 +32,8 @@ dev_dependencies:
 flutter_native_splash:
   color : "#f7f6f1"
   color_dark : "#272727"
-  image : assets/images/matric splash.png
-  image_dark: assets/images/matric splash.png
+  image : assets/images/welcome_image.png
+  image_dark: assets/images/welcome_image.png
 
   android_12 :
   icon_background_color : "#f7f6f1"
@@ -41,3 +46,5 @@ flutter:
     - assets/images/
     - assets/images/welcome_image.png
     - assets/subjects/
+    - assets/icons/
+    - assets/animations/

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:matric_app/constants/colors.dart';
-import 'package:matric_app/constants/sizes.dart';
+import 'package:matric_app/miscellaneous/constants/colors.dart';
+import 'package:matric_app/miscellaneous/constants/sizes.dart';
 
 class TOutlinedButtonTheme {
 
