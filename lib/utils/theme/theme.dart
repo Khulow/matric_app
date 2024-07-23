@@ -8,6 +8,8 @@ class TAppTheme {
   TAppTheme._();// TO AVOID CREATING INSTANCES
 
   static ThemeData lightTheme = ThemeData(
+    colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+      useMaterial3: true,
       brightness: Brightness.light,
       textTheme: TTextTheme.lightTextTheme,
       // to dynamically change the color of the outlinedbutton when the theme changes
